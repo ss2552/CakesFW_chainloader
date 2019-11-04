@@ -207,6 +207,11 @@ struct firm_signature firm_signatures[] = {
         .version = 0x2F,
         .version_string = "11.4.0",
         .console = console_n3ds
+    }, {
+        .sig = {0xC7, 0x09, 0x7B, 0x62, 0xB0, 0xFF, 0x5F, 0xCF, 0x75, 0xDC, 0xEF, 0x98, 0x50, 0xB4, 0xF0, 0x27},
+        .version = 0x35,
+        .version_string = "11.8.0",
+        .console = console_n3ds
     }, {.version = 0xFF}
 };
 

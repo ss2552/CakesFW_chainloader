@@ -78,12 +78,18 @@ patches:
                         - *reboot_code_o3ds
                         - *fix_nop
             n3ds:
+                0x35:
+                    offset: 0x08084EA8
+                    variables:
+                        - 0x0805A070
+                        - &reboot_code_n3ds 0x0817F4FC
+                        - &fix_mov_r7_r8 0xE1A07008
                 0x2F:
                     offset: 0x08084B7C
                     variables:
                         - 0x08059E44
-                        - &reboot_code_n3ds 0x0817F4FC
-                        - &fix_mov_r7_r8 0xE1A07008
+                        - *reboot_code_n3ds
+                        - *fix_nop
                 0x2D:
                     offset: 0x08084B3C
                     variables:
@@ -131,6 +137,7 @@ patches:
                 0x2A: 0x08093F28
                 0x1F: 0x0809744C
             n3ds:
+                0x35: 0x080947F4
                 0x2F: 0x08094298
                 0x2D: 0x08094260
                 0x21: 0x08094134
