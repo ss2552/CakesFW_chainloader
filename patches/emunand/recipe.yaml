@@ -10,6 +10,8 @@ patches:
             - sdmmc
         versions:
             o3ds:
+                0x66:
+                    - 0x080D8A70
                 0x64:
                     - 0x080D8A70
                 0x5E:
@@ -54,6 +56,7 @@ patches:
         type: NATIVE_FIRM
         versions:
             o3ds:
+                0x66: 0x0801B564
                 0x64: 0x0801B564
                 0x5E: 0x0801B564
                 0x5C: 0x0801B564
@@ -82,6 +85,7 @@ patches:
             variable: mem
         versions:
             o3ds:
+                0x66: 0x08077F40
                 0x64: 0x08077F40
                 0x5E: 0x08077C48
                 0x5C: 0x08077C34
@@ -110,6 +114,7 @@ patches:
             variable: mem
         versions:
             o3ds:
+                0x66: 0x08077F80
                 0x64: 0x08077F80
                 0x5E: 0x08077C88
                 0x5C: 0x08077C74
