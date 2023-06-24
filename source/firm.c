@@ -379,7 +379,7 @@ void boot_firm()
             keydata = (void *)((uintptr_t)firm_loc + firm_loc->section[2].offset + 0x89A14);
         } else if (current_firm->version == 0x2D || current_firm->version == 0x2F) {
             keydata = (void *)((uintptr_t)firm_loc + firm_loc->section[2].offset + 0x89C14);
-        } else if (current_firm->version == 0x35 || current_firm->version == 0x37 || current_firm->version == 0x3A) {
+        } else if (current_firm->version == 0x35 || current_firm->version == 0x37 || current_firm->version == 0x3A || current_firm->version == 0x3D) {
             keydata = (void *)((uintptr_t)firm_loc + firm_loc->section[2].offset + 0x8A214);
         } else {
             draw_message("Welp.", "someone forgot to update the keydata again. Please yell at them.");

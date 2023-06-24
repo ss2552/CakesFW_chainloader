@@ -11,12 +11,18 @@ patches:
             - fix_
         versions:
             o3ds:
-                0x69:
+                0x6C:
                     offset: 0x08084EA8
                     variables:
                         - 0x0805A070
                         - &reboot_code_o3ds 0x080FF4FC
                         - &fix_nop 0xE1A00000
+                0x69:
+                    offset: 0x08084EA8
+                    variables:
+                        - 0x0805A070
+                        - *reboot_code_o3ds
+                        - *fix_nop
                 0x66:
                     offset: 0x08084EA8
                     variables:
@@ -90,12 +96,18 @@ patches:
                         - *reboot_code_o3ds
                         - *fix_nop
             n3ds:
-                0x3A:
+                0x3D:
                     offset: 0x08084EA8
                     variables:
                         - 0x0805A070
                         - &reboot_code_n3ds 0x0817F4FC
                         - &fix_mov_r7_r8 0xE1A07008
+                0x3A:
+                    offset: 0x08084EA8
+                    variables:
+                        - 0x0805A070
+                        - *reboot_code_n3ds
+                        - *fix_nop
                 0x37:
                     offset: 0x08084EA8
                     variables:
@@ -149,6 +161,7 @@ patches:
         type: NATIVE_FIRM
         versions:
             o3ds:
+                0x6C: 0x08094778
                 0x69: 0x08094778
                 0x66: 0x08094778
                 0x64: 0x08094778
@@ -163,6 +176,7 @@ patches:
                 0x2A: 0x08093F28
                 0x1F: 0x0809744C
             n3ds:
+                0x3D: 0x080947F4
                 0x3A: 0x080947F4
                 0x37: 0x080947F4
                 0x35: 0x080947F4
