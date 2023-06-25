@@ -1,0 +1,9 @@
+if chk $[ONTYPE] O3DS
+	find -f 1:/title/00040138/00000002/content/*.app FIRMPATH
+elif chk $[ONTYPE] N3DS
+	find -f 1:/title/00040138/20000002/content/*.app FIRMPATH
+end
+
+imgmount $[FIRMPATH]
+
+cp -n G:/exefs/.firm 0:/cakes/firmware.bin
