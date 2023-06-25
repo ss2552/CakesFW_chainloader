@@ -1,9 +1,21 @@
 if chk $[ONTYPE] O3DS
-	find -f 1:/title/00040138/00000002/content/*.app FIRMPATH
+	find -f 1:/title/00040138/00000002/content/*.app NATIVE_FIRM
+	find -f 1:/title/00040138/00000102/content/*.app TWL_FIRM
+	find -f 1:/title/00040138/00000202/content/*.app AGB_FIRM
 elif chk $[ONTYPE] N3DS
-	find -f 1:/title/00040138/20000002/content/*.app FIRMPATH
+	find -f 1:/title/00040138/20000002/content/*.app NATIVE_FIRM
+	find -f 1:/title/00040138/20000102/content/*.app TWL_FIRM
+	find -f 1:/title/00040138/20000202/content/*.app AGB_FIRM
 end
 
-imgmount $[FIRMPATH]
-
+imgmount $[NATIVE_FIRM]
 cp -n G:/exefs/.firm 0:/cakes/firmware.bin
+imgumount
+
+imgmount $[TWL_FIRM]
+cp -n G:/exefs/.firm 0:/cakes/twl_firmware.bin
+imgumount
+
+imgmount $[AGB_FIRM]
+cp -n G:/exefs/.firm 0:/cakes/agb_firmware.bin
+imgumount
