@@ -42,11 +42,17 @@ struct firm_signature *current_firm = NULL;
 struct firm_signature *current_twl_firm = NULL;
 struct firm_signature *current_agb_firm = NULL;
 
-struct firm_signature *get_firm_info(firm_h *firm, struct firm_signature *signatures)
+struct firm_signature *get_firm_info(firm_h *firm, struct firm_signature *signatures, enum firm_types firm_type)
 {
     for (struct firm_signature *signature = signatures; signature->version != 0xFF; signature++) {
-        if (memcmp(signature->sig, firm->section[0].hash, 0x10) == 0) {
-            return signature;
+        if (firm_type == TWL_FIRM) {
+            if (memcmp(signature->sig, firm->section[3].hash, 0x10) == 0) {
+                return signature;
+            }
+        } else {
+            if (memcmp(signature->sig, firm->section[0].hash, 0x10) == 0) {
+                return signature;
+            }
         }
     }
 
@@ -275,7 +281,7 @@ int load_firm(firm_h *dest, char *path, char *path_firmkey, char *path_cetk, siz
     }
 
     // Determine firmware version
-    firm_current = get_firm_info(dest, signatures);
+    firm_current = get_firm_info(dest, signatures, firm_type);
 
     if (!firm_current) {
         print("Couldn't determine firmware version");

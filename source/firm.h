@@ -17,7 +17,7 @@ extern size_t agb_firm_size;
 extern struct firm_signature *current_agb_firm;
 extern int save_firm;
 
-struct firm_signature *get_firm_info(firm_h *firm, struct firm_signature *signatures);
+struct firm_signature *get_firm_info(firm_h *firm, struct firm_signature *signatures, enum firm_types firm_type);
 void slot0x11key96_init();
 int load_firms();
 void boot_firm();
