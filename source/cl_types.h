@@ -49,8 +49,6 @@ typedef volatile s16 vs16;
 typedef volatile s32 vs32;
 typedef volatile s64 vs64;
 
-#include "3dsheaders.h"
-
 #define CFG_BOOTENV         (*(vu32 *)0x10010000)
 #define CFG_UNITINFO        (*(vu8  *)0x10010010)
 #define CFG_TWLUNITINFO     (*(vu8  *)0x10010014)

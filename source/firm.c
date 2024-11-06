@@ -523,11 +523,11 @@ void launchFirm(int argc, char **argv)
     prepareArm11ForFirmlaunch();
     chainload(argc, argv, firm);
 }
-void loadHomebrewFirm(uint32_t pressed)
+void loadHomebrewFirm()
 {
     char path[10 + 255];
     bool hasDisplayedMenu = false;
-    bool found = !pressed ? payloadMenu(path, &hasDisplayedMenu) : findPayload(path, pressed);
+    bool found = findPayload(path, pressed);
 
     if(!found) return;
 

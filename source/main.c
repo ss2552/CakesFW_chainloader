@@ -14,6 +14,8 @@
 #include "fatfs/sdmmc/sdmmc.h"
 #include "external/i2c.h"
 
+#include "chainloader_firm.h"
+
 #define MAX_EMUNANDS 9
 
 void menu_select_patches()
@@ -207,7 +209,7 @@ void main()
     load_config();
 
     if(*hid_regs ^ 0xFFF ^ key_start){
-        loadHomebrewFirm(0);
+        loadHomebrewFirm();
     }
     
     // If the L button isn't pressed, autoboot.
