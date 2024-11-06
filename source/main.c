@@ -206,6 +206,12 @@ void main()
 
     load_config();
 
+    if(*hid_regs ^ 0xFFF ^ key_start)
+    {
+        loadHomebrewFirm(0);
+        pressed = HID_PAD;
+    }
+    
     // If the L button isn't pressed, autoboot.
     if (config->autoboot_enabled && *hid_regs ^ 0xFFF ^ key_l) {
         print("Autobooting...");
