@@ -6,6 +6,8 @@
 #include "headers.h"
 #include "firm_signatures.h"
 
+#include "types.h"
+
 extern firm_h *firm_orig_loc;
 extern size_t firm_size;
 extern struct firm_signature *current_firm;
