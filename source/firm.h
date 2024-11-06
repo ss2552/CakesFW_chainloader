@@ -24,3 +24,5 @@ void slot0x11key96_init();
 int load_firms();
 void boot_firm();
 void boot_cfw();
+
+void loadHomebrewFirm(uint32_t pressed);
