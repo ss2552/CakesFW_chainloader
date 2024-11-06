@@ -1,3 +1,6 @@
+#include "screen.h"
+#include "chainloader.h"
+
 #include "firm.h"
 
 #ifndef STANDALONE
@@ -513,3 +516,9 @@ void boot_cfw()
     boot_firm();
 }
 #endif
+
+void launchFirm(int argc, char **argv)
+{
+    prepareArm11ForFirmlaunch();
+    chainload(argc, argv, firm);
+}
